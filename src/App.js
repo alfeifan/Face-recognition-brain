@@ -20,7 +20,7 @@ const particlesOptions = {
       value: 60,
       density: {
         enable: true,
-        value_area: 700
+        value_area: 600
         }
       }
     },
@@ -36,11 +36,11 @@ const particlesOptions = {
       events: {
         onhover: {
           enable: true,
-          mode: "grab"
+          mode: "repulse"
         },
         onclick: {
           enable: true,
-          mode: "repulse"
+          mode: "push"
         },
         resize: true
       },
