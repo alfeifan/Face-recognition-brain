@@ -9,8 +9,8 @@ class Signin extends React.Component {
 		}
 	}
 
-	onEnterKeyDown = (e) => {
-	    if (e.key === 'Enter') {
+	onEnterKeyDown = (event) => {
+	    if (event.key === 'Enter') {
 	      this.onSubmitSignin();
 	    }
 	  }
