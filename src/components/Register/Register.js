@@ -9,6 +9,21 @@ class Register extends React.Component {
 			name: ''
 		}
 	}
+
+	verifyInput = (input) => {
+	for (let key in input) {
+		if (input[key] === "")
+			return false;
+	}
+	return true;
+	}
+
+	onEnterKeyDown = (event) => {
+	    if (event.key === 'Enter') {
+	      this.onSubmitSignin();
+	    }
+	  }
+
 	onNameChange = (event) => {
 		this.setState({name: event.target.value})
 	}
@@ -33,7 +48,9 @@ class Register extends React.Component {
 		})
 			.then(response => response.json())
 			.then(user => {
-				if (user) {
+				if (this.verifyInput(user) === true && user.email) {
+					console.log("This is true");
+					console.log(user);
 					this.props.loadUser(user)
 					this.props.onRouteChange('home');
 				}
@@ -72,6 +89,7 @@ class Register extends React.Component {
 				        type="password" 
 				        name="password"  
 				        id="password"
+				        onKeyDown={this.onEnterKeyDown}
 				        onChange={this.onPasswordChange}
 				        />
 				      </div>
