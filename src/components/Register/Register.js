@@ -37,7 +37,7 @@ class Register extends React.Component {
 	}
 
 	onSubmitSignin = () => {
-		fetch('http://localhost:3000/register', {
+		fetch('https://thawing-spire-74199.herokuapp.com/register', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
@@ -48,13 +48,11 @@ class Register extends React.Component {
 		})
 			.then(response => response.json())
 			.then(user => {
-				if (this.verifyInput(user) === true && user.email) {
-					console.log("This is true");
-					console.log(user);
-					this.props.loadUser(user)
-					this.props.onRouteChange('home');
-				}
-			})
+				if(user.id){
+		          this.props.loadUser(user);
+		          this.props.onRouteChange('home');
+	        }
+	     })
 	}
 
 	render() {
