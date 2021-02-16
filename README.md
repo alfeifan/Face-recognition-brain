@@ -1,4 +1,7 @@
 # Smart Brain
+
+![IMG](IMG.PNG)
+
 Smart Brain is a web application that uses the Clarifai API to perform facial recognition on a user submitted image.
 
 The front-end for smart-brain was built using HTML, CSS, JavaSript, React, Tachyons, and Particles.js.
